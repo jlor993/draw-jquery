@@ -36,6 +36,8 @@ gulp.task('default', ['watch']);
 gulp.task('build-css', function(){
   //Create an unminified version
   var full = gulp.src([
+    // 1. Include normalize
+    'node_modules/normalize.css/normalize.css',
     'src/scss/main.scss'
   ])
   . pipe(scss())
@@ -44,6 +46,8 @@ gulp.task('build-css', function(){
 
   //Create a minified version
   var min = gulp.src([
+    // 2. Include normalize
+    'node_modules/normalize.css/normalize.css',
     'src/scss/main.scss'
   ])
   . pipe(scss())
@@ -57,12 +61,16 @@ gulp.task('build-css', function(){
 
 gulp.task('build-js', function() {
   var full = gulp.src([
+    // 3. Include jQuery
+    'node_modules/jquery/dist/jquery.js',
     'src/js/main.js'
   ])
   .pipe(concat('main.js'))
   .pipe(gulp.dest('dist/js'));
 
   var min = gulp.src([
+    // 4. Include jQuery
+    'node_modules/jquery/dist/jquery.js',
     'src/js/main.js'
   ])
   .pipe(concat('main.min.js'))
@@ -71,6 +79,7 @@ gulp.task('build-js', function() {
 
   return merge(full, min);
 });
+
 
 gulp.task('watch', function(){
   gulp.watch('./src/scss/**/*.scss', ['build-css']);

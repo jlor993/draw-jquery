@@ -250,30 +250,44 @@ draw.getCanvas().addEventListener('mouseup', function() {
     draw.setIsDrawing(false);
 }, false);
 
-document.getElementById('btnLine').addEventListener('click',function(){
-    draw.setShape('line');
-}, false);
+$(function() {
+    $('#btnLine').on('click',function(){
+      draw.setShape('line');
+    });
+});
 
-document.getElementById('btnPath').addEventListener('click', function(){
-    draw.setShape('path');
-}, false);
+$(function() {
+    $('#btnPath').on('click',function(){
+      draw.setShape('path');
+    });
+});
 
-document.getElementById('btnRect').addEventListener('click',function(){
-    draw.setShape('rectangle');
-}, false);
+$(function() {
+    $('#btnRect').on('click',function(){
+      draw.setShape('rectangle');
+    });
+});
 
-document.getElementById('btnCircle').addEventListener('click', function(){
-    draw.setShape('circle');
-}, false);
+$(function() {
+    $('#btnCircle').on('click',function(){
+      draw.setShape('circle');
+    });
+});
 
-document.getElementById('btnTriangle').addEventListener('click', function(){
-    draw.setShape('triangle');
-}, false);
+$(function() {
+    $('#btnTriangle').on('click',function(){
+      draw.setShape('triangle');
+    });
+});
 
-document.getElementById('btnRTriangle').addEventListener('click', function(){
-    draw.setShape('r_triangle');
-}, false);
+$(function() {
+    $('#btnRTriangle').on('click',function(){
+      draw.setShape('r_triangle');
+    });
+});
 
-document.getElementById('btnText').addEventListener('click', function(){
-    draw.setShape('text');
-}, false);
+$(function() {
+    $('#btnText').on('click',function(){
+      draw.setShape('text');
+    });
+});
